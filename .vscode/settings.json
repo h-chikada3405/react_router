@@ -1,0 +1,7 @@
+{
+  "material-icon-theme.folders.associations": {
+    "react-router": "react-components",
+    "maps": "global",
+    "schedule": "tasks"
+  },
+}

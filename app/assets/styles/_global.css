@@ -1,0 +1,15 @@
+body {
+	height: 100vh;
+	font-family: "Zen Kaku Gothic New", Arial, sans-serif;
+	background: linear-gradient(
+		105.42deg,
+		rgba(226, 232, 240, 0.8) 0%,
+		rgba(255, 247, 237, 0.8) 36.91%,
+		rgba(226, 232, 240, 0.8) 86.26%
+	);
+	overflow: hidden;
+
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
+}

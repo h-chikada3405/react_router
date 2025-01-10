@@ -1,0 +1,6 @@
+{
+  "material-icon-theme.folders.associations": {
+    ".mypy_cache": "python",
+    "migrations": "batch",
+  }
+}
