@@ -19,7 +19,7 @@ COPY pyproject.toml /project
 COPY uv.lock /project
 # run pytest 必要ファイル
 COPY README.md /project
-COPY prisma/schema.prisma /project/prisma/schema.prisma
+COPY prisma/ /project/prisma/
 # uv インストール
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 

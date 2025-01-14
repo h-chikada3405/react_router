@@ -60,21 +60,21 @@ authenticator.use(strategy, process.env.AUTHENTICATOR_STRATEGY ?? "");
  * @returns {Promise<User>}
  */
 async function getUserSession(request:Request): Promise<User> {
-	const user = await getSession<User>(request);
-	if (!user) {
-		try {
+	try {
+		const user = await getSession<User>(request);
+		if (!user) {
 			const user = await authenticator.authenticate(process.env.AUTHENTICATOR_STRATEGY ?? "", request);
 			const headers = await setSession(request, user);
 			throw redirect("/", { headers: headers });
-		} catch(error) {
-			if (error instanceof Response) {
-				throw error;
-			}
-			console.error(error)
-			throw redirect("/auth/login");
 		}
+		return user;
+	} catch (error) {
+		if (error instanceof Response) {
+			throw error;
+		}
+		console.error(error)
+		throw redirect("/auth/login");
 	}
-	return user;
 }
 
 export { authenticator, getUserSession };

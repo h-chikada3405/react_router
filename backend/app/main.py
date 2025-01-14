@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from app.routers import hello, client
+from app.routers import hello, client, maps
 from app.core.db import prisma
 from app.core.auth_middleware import AuthMiddleware
 
@@ -20,3 +20,4 @@ app.add_middleware(AuthMiddleware)
 
 app.include_router(hello.router)
 app.include_router(client.router)
+app.include_router(maps.router)

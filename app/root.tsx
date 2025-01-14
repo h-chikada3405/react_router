@@ -31,9 +31,6 @@ export const loader: LoaderFunction = async ({ request }): Promise<RootLoaderDat
 	}
 
 	const user = await getUserSession(request);
-	if (!user) {
-		throw redirect("/auth/login");
-	}
 
 	return {
 		ENV: envData,

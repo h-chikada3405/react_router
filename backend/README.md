@@ -55,7 +55,7 @@ prisma migrate reset
 コンテナin
 
 ```bash
-docker exec -it fast_prisma-api bash
+docker exec -it test_fast-api bash
 ```
 
 seeder 実行

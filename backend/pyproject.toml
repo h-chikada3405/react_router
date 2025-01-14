@@ -23,6 +23,8 @@ dependencies = [
     "types-cachetools>=5.5.0.20240820",
     "pyjwt>=2.10.1",
     "cryptography>=44.0.0",
+    "beautifulsoup4>=4.12.3",
+    "httpx>=0.28.1",
 ]
 [base_fastapi]
 ignore_missing_imports = true

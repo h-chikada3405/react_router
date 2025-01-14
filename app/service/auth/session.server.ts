@@ -7,7 +7,7 @@ const sessionCookie = createCookie(process.env.AUTHENTICATOR_STRATEGY ?? "", {
 	sameSite: "lax",
 	httpOnly: true,
 	secure: process.env.NODE_ENV === "production",
-	maxAge: 60 * 60 * 12,
+	maxAge: 60 * 60 * 1,
 })
 
 export const sessionStorage = createMemorySessionStorage({

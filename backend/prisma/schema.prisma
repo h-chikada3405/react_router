@@ -16,6 +16,8 @@ model Client {
   address     String
   tel         String
   email       String @unique
+  latitude    String
+  longitude   String
 
   @@map("clients")
 }
