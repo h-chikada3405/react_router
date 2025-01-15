@@ -7,14 +7,14 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          'Zen Kaku Gothic New"',
+          '"Zen Kaku Gothic New"',
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
-          'Apple Color Emoji"',
-          'Segoe UI Emoji"',
-          'Segoe UI Symbol"',
-          'Noto Color Emoji"'
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"'
         ]
       },
       borderRadius: {

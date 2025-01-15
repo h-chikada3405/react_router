@@ -2,7 +2,7 @@ import {
 	Links,
 	type LoaderFunction,
 	Meta,
-	MetaFunction,
+	type MetaFunction,
 	Outlet,
 	Scripts,
 	ScrollRestoration,
@@ -12,12 +12,14 @@ import {
 import GlobalNav from "~/components/layout/GlobalNav";
 import type { Route } from "./+types/root";
 import stylesheet from "./assets/styles/app.css?url";
-import { getUserSession } from "./service/auth/auth.server";
-import { RootLoaderData } from "./types/.";
 import SideBarLogo from "./components/ui/SideBarLogo";
 import { META_INFO } from "./constants/meta";
+import { getUserSession } from "./service/auth/auth.server";
+import type { RootLoaderData } from "./types/.";
 
-export const loader: LoaderFunction = async ({ request }): Promise<RootLoaderData> => {
+export const loader: LoaderFunction = async ({
+	request,
+}): Promise<RootLoaderData> => {
 	const url = new URL(request.url);
 	const envData = {
 		TITLE: process.env.SITE_TITLE || "",
@@ -36,7 +38,7 @@ export const loader: LoaderFunction = async ({ request }): Promise<RootLoaderDat
 		ENV: envData,
 		USER: user,
 	};
-}
+};
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },

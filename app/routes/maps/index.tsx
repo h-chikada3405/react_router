@@ -1,10 +1,16 @@
-import { AdvancedMarker, Map as ClientMap, Pin, useMap } from "@vis.gl/react-google-maps";
+import {
+	AdvancedMarker,
+	Map as ClientMap,
+	Pin,
+	useMap,
+} from "@vis.gl/react-google-maps";
 import { useCallback } from "react";
 import { Outlet, useNavigate, useRouteLoaderData } from "react-router";
 import BottomFixedNav from "~/components/maps/BottomFixedNav";
-import { clients, MPA_MARKER_OPTIONS } from "~/constants/maps";
+import { MPA_MARKER_OPTIONS, clients } from "~/constants/maps";
 import useGeolocation from "~/hooks/useGeolocation";
 import { animateToLocation } from "~/lib/maps";
+import type { Client } from "~/types";
 
 export default function Index() {
 	const { MAP_ENV } = useRouteLoaderData("routes/maps/layout");
@@ -23,12 +29,12 @@ export default function Index() {
 		return <div>現在地を取得中です...</div>;
 	}
 
-	const handleMarkerClick = (client: any) => {
+	const handleMarkerClick = (client: Client) => {
 		if (map && client.position) {
 			animateToLocation(map, client.position);
 		}
-		navigate(`./place/${client.id}`)
-	}
+		navigate(`./place/${client.id}`);
+	};
 
 	return (
 		<>

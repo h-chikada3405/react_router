@@ -1,11 +1,10 @@
-import { EnvLoaderData } from "./env";
-import { User } from "~/service/auth/auth.server";
-import { OIDCStrategy } from "remix-auth-openid";
+import type { OIDCStrategy } from "remix-auth-openid";
+import type { EnvLoaderData } from "./env";
 
 export interface User extends OIDCStrategy.BaseUser {
 	sub: string;
-  name: string;
-  email: string;
+	name: string;
+	email: string;
 }
 
 export interface RootLoaderData {
@@ -16,4 +15,11 @@ export interface RootLoaderData {
 export interface Client {
 	id: number;
 	name: string;
+	address: string;
+	postalCode: string;
+	status: number;
+	position: {
+		lat: number;
+		lng: number;
+	};
 }

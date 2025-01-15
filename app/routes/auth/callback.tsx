@@ -1,7 +1,9 @@
-import { redirect, type LoaderFunctionArgs } from "react-router";
+import { type LoaderFunctionArgs, redirect } from "react-router";
 import { getUserSession } from "~/service/auth/auth.server";
 
-export async function loader({ request }: LoaderFunctionArgs): Promise<Response> {
+export async function loader({
+	request,
+}: LoaderFunctionArgs): Promise<Response> {
 	await getUserSession(request);
 	return redirect("/");
 }

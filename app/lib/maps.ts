@@ -46,9 +46,8 @@ export const haversineDistance = (
 export const formatDistanceLabel = (distanceInKm: number): string => {
 	if (distanceInKm < 1) {
 		return `${Math.round(distanceInKm * 1000)}m`;
-	} else {
-		return `${distanceInKm.toFixed(1)}km`;
 	}
+	return `${distanceInKm.toFixed(1)}km`;
 };
 
 /**

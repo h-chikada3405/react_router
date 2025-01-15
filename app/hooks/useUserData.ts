@@ -1,5 +1,5 @@
 import { useRouteLoaderData } from "react-router";
-import { RootLoaderData } from "~/types/.";
+import type { RootLoaderData } from "~/types/.";
 
 /**
  * `root` ローダーデータから USER 情報を取得
@@ -9,4 +9,4 @@ import { RootLoaderData } from "~/types/.";
 export default function useUserData(): RootLoaderData["USER"] | null {
 	const data = useRouteLoaderData<RootLoaderData>("root");
 	return data?.USER || null;
-};
+}
